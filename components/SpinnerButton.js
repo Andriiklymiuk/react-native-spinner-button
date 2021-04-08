@@ -41,7 +41,8 @@ const SpinnerButton = ({
   isLoading,
   isConnected = true,
   disabled = false,
-  disableStyle
+  disableStyle,
+  testId
 }) => {
   const isDisable = disabled || !isConnected;
   const isAnimationType = animationType !== null && animationType !== undefined;
@@ -59,6 +60,7 @@ const SpinnerButton = ({
   return (
     <View style={[styles.buttonContainer, styles.centerAlign]}>
       <AnimatedTouchablesOpacity
+        testId={testId}
         activeOpacity={1}
         style={[style, animatedStyles]}
         onPress={onPress}
